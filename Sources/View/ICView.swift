@@ -106,9 +106,9 @@ open class ICView<View: CellableView, Cell: ViewHostingCell<View>, Settings: ICS
     
     // MARK: - Gesture
     private func setupGestures() {
-        let longTapGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongTapGesture(_:)))
-        longTapGesture.delegate = self
-        collectionView.addGestureRecognizer(longTapGesture)
+//        let longTapGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongTapGesture(_:)))
+//        longTapGesture.delegate = self
+//        collectionView.addGestureRecognizer(longTapGesture)
     }
     
     private func checkLongTapPosition(gesture: UILongPressGestureRecognizer) -> Bool {
@@ -119,6 +119,7 @@ open class ICView<View: CellableView, Cell: ViewHostingCell<View>, Settings: ICS
     }
     
     @objc private func handleLongTapGesture(_ gestureRecognizer: UILongPressGestureRecognizer) {
+        return
         let gestureState = gestureRecognizer.state
         let gesturePoint = gestureRecognizer.location(in: collectionView)
         
