@@ -982,7 +982,10 @@ extension ICViewFlowLayout {
                 availableRanges += currentAvailableRanges
             } else {
                 if adjustedRange.upperBound > lastAvailableRange.lowerBound {
-                    let avairableRange = adjustedRange.upperBound...lastAvailableRange.upperBound
+                    let lowerBound = min(adjustedRange.upperBound, lastAvailableRange.upperBound)
+                    let upperBound = max(adjustedRange.upperBound, lastAvailableRange.upperBound)
+                    let avairableRange = lowerBound...upperBound
+                    
                     availableRanges.removeLast()
                     availableRanges.append(avairableRange)
                 }
